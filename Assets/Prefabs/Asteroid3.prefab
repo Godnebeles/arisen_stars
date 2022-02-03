@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d041cb3956d6ce848a5cddedac2a9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
-  explosionPlayer: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
+  explosion: {fileID: 100004, guid: b37a47c7585a7424faf0d8e3dcb768a7, type: 3}
+  explosionPlayer: {fileID: 100008, guid: d382ef30f9e53764b8c482b7a998b486, type: 3}
   scoreValue: 10
   mega_exp: {fileID: 3383721926494833210, guid: cb719e2150f0b2b4aacfded5a8bf1507,
     type: 3}
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bd5c2b6e15cfa42b9dbaf8d4bf6484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   speed: -4
 --- !u!1001 &2568509051978116136
 PrefabInstance:
@@ -120,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
       propertyPath: m_Name
       value: prop_asteroid_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134,6 +137,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -144,14 +151,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2768a9a4c8d289840918dcb879705893, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
