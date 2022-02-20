@@ -24,9 +24,6 @@ public class BackGameButton : MonoBehaviour
                 {
                     Time.timeScale = 1f;
                 }
-
-
-
             }
             if (restart.activeSelf) // Если активироана кнопка "restart"
             {

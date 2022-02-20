@@ -33,9 +33,6 @@ public class PlayerController : MonoBehaviour
 
         if (_touchpadUltimate.CanFire() && Time.time >= nextFire2)
         {
-            nextFire2 = Time.time + fireRate2;
-            Instantiate(_ultimateBulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation);
-            GetComponent<AudioSource>().Play();
         }
     }
 
