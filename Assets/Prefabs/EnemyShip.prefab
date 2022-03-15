@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5a8518ba4e92c409b13128f09b0273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 6243025587514674791, guid: 8204426317408e94993d0086a9bcce1b, type: 3}
+  shot: {fileID: 4798986776565405151, guid: 835ec59bfebe6b8479502c2d3195f71b, type: 3}
   shotSpawn: {fileID: 361149637567455073}
   fireRate: 1.5
   delay: 0.5
@@ -243,11 +243,6 @@ MonoBehaviour:
   maneuvreTime: {x: 1, y: 2}
   maneuvreSpeed: 6
   maneuvreWait: {x: 1, y: 2}
-  boundary:
-    xMin: -4.16
-    xMax: 4.16
-    zMin: -10
-    zMax: 17
   tilt: 4
 --- !u!114 &7802377437704174487
 MonoBehaviour:

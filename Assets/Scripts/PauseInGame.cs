@@ -27,12 +27,9 @@ public class PauseInGame : MonoBehaviour
 
     public void ExitToMenu()
     {
-
-
         Time.timeScale = 1f;
         SceneManager.LoadScene("mainMenu", LoadSceneMode.Single);
-        
-
+      
     }
     
 }

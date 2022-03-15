@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SetVolume : MonoBehaviour
 {
@@ -9,8 +7,9 @@ public class SetVolume : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        
     }
-
+    
     // Update is called once per frame
     void Update()
     {

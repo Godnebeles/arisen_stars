@@ -7,19 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [Header("ASTEROIDS")]
-    public GameObject [] hazards;
-    public Vector3 spawnValues;
-    public int hazardCount;
-    public float spawnWait;
-    public float startWait;
-    public float wavesWait;
+
     [Space]
     [Header("MONEY")]
     public int moneyAfterLose;
     private int money;
     private int moneyForResult;
-    private IEnumerator coroutine;
+
     [Space]
     [Header("Score Text")]
     public Text scoreText; // обьект текста
@@ -30,10 +24,6 @@ public class GameController : MonoBehaviour
     [Space]
     [Header("Pause and Lose Menu")]
     public PauseInGame pause;
-    public Button exitInMenu; 
-    public GameObject resturtButton;
-    public GameObject buttonToMenu;
-    public GameObject buttonMenu;
     private bool gameOver;
     private bool restartGame;
 
@@ -63,16 +53,12 @@ public class GameController : MonoBehaviour
         moneyAfterLoseText.text = "";
         gameOverText.text = "";
 
-        buttonMenu.SetActive(true);
-        buttonToMenu.SetActive(false);
-        resturtButton.SetActive(false);
+
 
         gameOver = false;
         restartGame = false;
         
-        
-        coroutine = SpawnWaves();
-        StartCoroutine(coroutine);
+
 
         score = 0;
         UpdateScore();
@@ -88,42 +74,7 @@ public class GameController : MonoBehaviour
 
 
     }
-    private IEnumerator SpawnWaves ()
-    {
-        if (Screen.width < Screen.height) 
-        {
-            float width = Screen.width;
-            float height = Screen.height;
-            float x = width / height * 10f;
-            spawnValues.x = x - 0.6f;
-        }
-        else
-        {
-            float width = Screen.width;
-            float height = Screen.height;
-            float x = height / width * 10f;
-            spawnValues.x = x - 1.3f;
-        }
-        
-         
-        yield return new WaitForSeconds(startWait); // waiting for start asteroid
-        while (true)
-        {
-            for (int i = 0; i < hazardCount; i++)
-            {
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
-                Instantiate(hazard, spawnPosition, spawnRotation);
-
-                yield return new WaitForSeconds(Random.Range(0.5f,spawnWait));
-            }
-            yield return new WaitForSeconds(wavesWait);
-            
-        }
-        
-        
-    }
+    
     public void AddMoney(int MoneyValues)
     {
         if (score > 2000 && score < 4000)
@@ -227,11 +178,6 @@ public class GameController : MonoBehaviour
         {
             
             moneyAfterLoseText.text = "+" + moneyForResult + "$"; // Добавляем деньги, поделив заработанные очки на 10
-            
-            buttonMenu.SetActive(false); // Отключение и включение кнопок после проигрыша
-            buttonToMenu.SetActive(true); // Отключение и включение кнопок после проигрыша 
-            resturtButton.SetActive(true); // Отключение и включение кнопок после проигрыша
-
 
             restartGame = true;
             
