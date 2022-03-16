@@ -14,4 +14,9 @@ public class Scoring : MonoBehaviour
 
         OnScoreValueChangedEvent?.Invoke(_score);
     }
+
+    public void OnEnemyDeath()
+    {
+        
+    }
 }

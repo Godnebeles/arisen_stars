@@ -198,6 +198,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79525857}
   m_CullTransparentMesh: 0
+--- !u!1 &108237494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108237495}
+  - component: {fileID: 108237496}
+  m_Layer: 0
+  m_Name: ScoringCalculator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &108237495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108237494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 363765928}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108237496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108237494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2298ba553bf3cdb47af2d8d9552f185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoring: {fileID: 1835804773}
 --- !u!1 &115839532
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +554,7 @@ Transform:
   - {fileID: 1919775644}
   - {fileID: 1186952710}
   - {fileID: 1835804772}
+  - {fileID: 108237495}
   m_Father: {fileID: 1411736254}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -526,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseManager: {fileID: 1919775643}
-  _characterController: {fileID: 0}
+  _characterController: {fileID: 569387799}
   _simplePlayerAttack: {fileID: 1740704866}
   _ultimatePlayerAttack: {fileID: 1740704858}
 --- !u!1 &376594853
@@ -966,6 +1011,7 @@ GameObject:
   - component: {fileID: 1740704865}
   - component: {fileID: 1740704866}
   - component: {fileID: 569387799}
+  - component: {fileID: 569387800}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -987,6 +1033,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _boundary: {fileID: 1186952709}
+--- !u!114 &569387800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569387798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876dfed09aca9944d80e25400e6a6df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &569882422
 Transform:
   m_ObjectHideFlags: 0
@@ -8329,6 +8387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2af14136f6a5942af01d7543a8b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
 --- !u!114 &1740704858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8500,6 +8559,8 @@ MonoBehaviour:
   _bulletSpawnPosition: {fileID: 1384920586}
   _audio: {fileID: 1740704863}
   _attackCooldown: 0.5
+  _scoringCalculator: {fileID: 108237496}
+  _damage: 100
 --- !u!1 &1740780484
 GameObject:
   m_ObjectHideFlags: 0

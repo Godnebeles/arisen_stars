@@ -1,4 +1,6 @@
+using System;
+
 public interface IDamageable
 {
-    void MakeDamage(int damage);
+    bool MakeDamage(int damage);
 }

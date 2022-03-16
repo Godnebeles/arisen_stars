@@ -13,12 +13,12 @@ public class HealthView : MonoBehaviour
         _healthSlider.value = _playerHealth.MaxHealthValue;
         _healthText.text = System.Convert.ToString(_playerHealth.MaxHealthValue);
         _playerHealth.OnHealthChangedEvent += OnHealthValueChanged;
-        _playerHealth.OnPlayerDeathEvent += OnPlayerDeath;
+        _playerHealth.OnDeathEvent += OnDeath;
     }
 
-    private void OnPlayerDeath(HealthData healthdata)
+    private void OnDeath()
     {
-        OnHealthValueChanged(healthdata);
+        _healthSlider.value = _healthSlider.minValue;
     }
 
     private void OnHealthValueChanged(HealthData healthData)

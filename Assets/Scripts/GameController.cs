@@ -145,16 +145,13 @@ public class GameController : MonoBehaviour
     }
     public void DamageForEnemy(int damage, Collider other)
     {
-
-        
-
         currentEnemyHP =  maxHealthEnemy - damage;
         maxHealthEnemy = currentEnemyHP;
         
         if (currentEnemyHP <= 0)
         {
             UpEnemy();
-            AddScore(100);
+            //AddScore(100);
             AddMoney(10);
             UpEnemy();
             Destroy(other.gameObject);

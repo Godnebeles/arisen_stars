@@ -1,17 +1,19 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public delegate void HealthCallback(HealthData healthData);
-    public event HealthCallback OnHealthChangedEvent;
-    public event HealthCallback OnPlayerDeathEvent;
+    public event Action<HealthData> OnHealthChangedEvent;
+    public event Action OnDeathEvent;
 
-    private int _health;
+    [SerializeField]private int _health;
     public int MaxHealthValue { get; private set; }
     public int MinHealthValue { get; private set; } = 0;
 
     private void Awake()
     {
+        OnDeathEvent += Kill;
+        
         MaxHealthValue = PlayerPrefs.GetInt("MaxHealth");
         
         if (MaxHealthValue <= MinHealthValue)
@@ -20,7 +22,7 @@ public class Health : MonoBehaviour
         _health = MaxHealthValue;
     }
 
-    public void DecreaseHealth(int points)
+    public bool DecreaseHealth(int points)
     {
         int oldHealthValue = _health;
         _health -= points;
@@ -30,13 +32,14 @@ public class Health : MonoBehaviour
         if (_health <= MinHealthValue)
         {
             healthData.newHealth = MinHealthValue;
-            OnPlayerDeathEvent?.Invoke( healthData);
-            Kill();
+            OnDeathEvent?.Invoke();
         }
         else
         {
             OnHealthChangedEvent?.Invoke( healthData);
         }
+
+        return _health > MinHealthValue;
     }
 
     public void IncreaseHealth(int points)
@@ -49,7 +52,7 @@ public class Health : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
 

@@ -6,12 +6,12 @@ public class GameStateSwitcher : MonoBehaviour
     [SerializeField] private GameState _gameState;
 
 
-    private void Start()
+    private void Awake()
     {
-        _health.OnPlayerDeathEvent += OnPlayerDeath;
+        _health.OnDeathEvent += OnDeath;
     }
 
-    private void OnPlayerDeath(HealthData healthData)
+    private void OnDeath()
     {
         _gameState.SetGameOver();
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,21 @@ using UnityEngine;
 public class Damageable : MonoBehaviour, IDamageable
 {
     private Health _health;
-    void Start()
+    private bool _isAlive = true;
+
+    private void Awake()
     {
         _health = GetComponent<Health>();
+        _health.OnDeathEvent += OnDeath;
     }
 
-    public void MakeDamage(int damage)
+    private void OnDeath()
     {
-        _health.DecreaseHealth(damage);
+        _isAlive = false;
+    }
+    
+    public bool MakeDamage(int damage)
+    {
+        return _health.DecreaseHealth(damage);
     }
 }
