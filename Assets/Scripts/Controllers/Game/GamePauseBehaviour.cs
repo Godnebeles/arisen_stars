@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GamePauseBehaviour : MonoBehaviour, IPauseHandler
+public class GamePauseBehaviour : IPauseHandler
 {
 
     public void SetPaused(bool isPaused)

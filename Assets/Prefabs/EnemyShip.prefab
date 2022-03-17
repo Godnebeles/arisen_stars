@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361149637567455073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,8 @@ GameObject:
   - component: {fileID: 6356012421471348276}
   - component: {fileID: 3913402722485094630}
   - component: {fileID: 6810319742192568757}
-  m_Layer: 0
+  - component: {fileID: 6134357078455015267}
+  m_Layer: 8
   m_Name: EnemyShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -282,6 +283,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876dfed09aca9944d80e25400e6a6df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6134357078455015267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298081324277726776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88def119ba333704c9c21a804d5d65e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer: 8
 --- !u!1 &3298081325506308429
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +307,7 @@ GameObject:
   - component: {fileID: 3298081325505885549}
   - component: {fileID: 3298081325505115469}
   - component: {fileID: 3298081325504116621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vehicle_enemyShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +389,7 @@ GameObject:
   - component: {fileID: 3298081325740239575}
   - component: {fileID: 3298081325725036439}
   - component: {fileID: 3298081325725062711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: engines_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

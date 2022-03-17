@@ -19,7 +19,8 @@ public class WeaponController : MonoBehaviour
     
     public void Fire()
     {
-        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        Bullet bullet = Instantiate(shot, shotSpawn.position, shotSpawn.rotation).GetComponent<Bullet>();
+        bullet.SetDamage(100);
         audioS.Play();
     }
 }

@@ -8,11 +8,10 @@ public class SimplePlayerAttack : MonoBehaviour, IPauseHandler
     [SerializeField] private AudioSource _audio;
     [SerializeField] private float _attackCooldown = 0.1f;
     [SerializeField] private ScoringCalculator _scoringCalculator;
-
     [SerializeField] private int _damage;
+    [SerializeField] private float _nextFireTime = 0f;
 
-    private float _nextFireTime = 0f;
-
+    [SerializeField] private int _layer;
     private bool _isPaused;
 
     private void Update()
@@ -31,6 +30,7 @@ public class SimplePlayerAttack : MonoBehaviour, IPauseHandler
                     .GetComponent<Bullet>();
                 bullet.SetDamage(_damage);
                 bullet.OnDeathAction(OnEnemyKilling);
+                bullet.gameObject.layer = _layer;
                 GetComponent<AudioSource>().Play();
             }
         }

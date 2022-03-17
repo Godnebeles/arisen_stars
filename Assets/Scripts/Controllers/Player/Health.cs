@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
 {
     public event Action<HealthData> OnHealthChangedEvent;
     public event Action OnDeathEvent;
+    
 
     [SerializeField]private int _health;
     public int MaxHealthValue { get; private set; }

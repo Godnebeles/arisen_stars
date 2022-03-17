@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7199854758511767758}
   - component: {fileID: 526648337698210896}
   - component: {fileID: 5328746670166831789}
-  - component: {fileID: 1110527243552806257}
-  m_Layer: 0
+  - component: {fileID: 4822558119691573033}
+  - component: {fileID: -3155064067912113610}
+  m_Layer: 9
   m_Name: EnemyBolt
   m_TagString: Bolt
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -15
---- !u!114 &1110527243552806257
+--- !u!114 &4822558119691573033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,14 +88,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4798986776565405151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afff1e40f37882545a25d20a186698c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 88def119ba333704c9c21a804d5d65e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100012, guid: 40f2701201e40934785582b785b12313, type: 3}
-  explosionPlayer: {fileID: 100008, guid: d382ef30f9e53764b8c482b7a998b486, type: 3}
-  scoreValue: 0
-  mega_exp: {fileID: 3383721926494833210, guid: cb719e2150f0b2b4aacfded5a8bf1507,
-    type: 3}
+  _layer: 9
+--- !u!114 &-3155064067912113610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798986776565405151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47875fdf2bcac1f468e24251606d2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7699042273034471656
 GameObject:
   m_ObjectHideFlags: 0

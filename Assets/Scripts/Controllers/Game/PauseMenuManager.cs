@@ -1,11 +1,9 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PauseMenuManager : MonoBehaviour
 {
-
-    [SerializeField] private CanvasGroup _canvasGroupPause;
-    [SerializeField] private CanvasGroup _canvasGroupResume;
-    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private ViewStorage _viewStorage;
     [SerializeField] private PauseManager _pauseManager;
 
     public void Start()
@@ -15,9 +13,9 @@ public class PauseMenuManager : MonoBehaviour
 
     public void OnPauseStateChanged(bool isEnabled)
     {
-        _canvasGroupPause.IsEnableCanvasGroup(isEnabled);
-        _canvasGroupResume.IsEnableCanvasGroup(isEnabled);
-        _canvasGroup.IsEnableCanvasGroup(isEnabled);
+        _viewStorage.canvasGroupPause.IsEnableCanvasGroup(isEnabled);
+        _viewStorage.canvasGroupResume.IsEnableCanvasGroup(isEnabled);
+        _viewStorage.canvasGroupMenuInterface.IsEnableCanvasGroup(isEnabled);
     }
 
 }
