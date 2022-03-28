@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine;
 
 public class SimplePlayerAttack : MonoBehaviour, IPauseHandler

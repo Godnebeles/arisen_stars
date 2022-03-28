@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
     public event Action<HealthData> OnHealthChangedEvent;
     public event Action OnDeathEvent;
-    
 
-    [SerializeField]private int _health;
+    private int _health;
+    
+    [SerializeField] private int _startHealth;
     public int MaxHealthValue { get; private set; }
     public int MinHealthValue { get; private set; } = 0;
 
@@ -18,7 +20,7 @@ public class Health : MonoBehaviour
         MaxHealthValue = PlayerPrefs.GetInt("MaxHealth");
         
         if (MaxHealthValue <= MinHealthValue)
-            MaxHealthValue = 100;
+            MaxHealthValue = _startHealth;
 
         _health = MaxHealthValue;
     }
@@ -37,7 +39,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            OnHealthChangedEvent?.Invoke( healthData);
+            OnHealthChangedEvent?.Invoke(healthData);
         }
 
         return _health > MinHealthValue;
@@ -56,4 +58,3 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 }
-

@@ -19,6 +19,7 @@ public class HealthView : MonoBehaviour
     private void OnDeath()
     {
         _healthSlider.value = _healthSlider.minValue;
+        _healthText.text = _playerHealth.MinHealthValue.ToString();
     }
 
     private void OnHealthValueChanged(HealthData healthData)
