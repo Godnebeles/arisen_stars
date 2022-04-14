@@ -4,11 +4,11 @@ using UnityEngine.Serialization;
 public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private ViewStorage _viewStorage;
-    [SerializeField] private PauseManager _pauseManager;
+    [FormerlySerializedAs("_pauseManager")] [SerializeField] private Pause pause;
 
     public void Start()
     {
-        _pauseManager.OnPauseStateChangedEvent += OnPauseStateChanged;
+        pause.OnPauseStateChangedEvent += OnPauseStateChanged;
     }
 
     public void OnPauseStateChanged(bool isEnabled)

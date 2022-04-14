@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     private readonly List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
     public event Action<bool> OnPauseStateChangedEvent;

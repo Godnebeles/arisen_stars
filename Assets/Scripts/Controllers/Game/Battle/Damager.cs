@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Damager : MonoBehaviour
 {
-    private int _damage;
+    [SerializeField] private int _damage;
     private Action OnDeathActionEvent;
 
     public void SetDamage(int damage)

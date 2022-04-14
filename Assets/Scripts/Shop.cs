@@ -25,7 +25,7 @@ public class Item
     public float valueSpeed;
     public float valueSpeedMyltiply;
 }
-public class Shop : MonoBehaviour
+public class Shopi : MonoBehaviour
 {
     [Header("Кнопки товаров")]
     public Button[] shopBttns;
@@ -59,12 +59,6 @@ public class Shop : MonoBehaviour
         
         
     }
-    private void Start()
-    {
-        
-        
-    }
-
 
     public void Update()
     {

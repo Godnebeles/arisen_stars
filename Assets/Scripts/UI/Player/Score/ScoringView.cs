@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ScoringView : MonoBehaviour
 {
-    [SerializeField] private Scoring _scoring;
+    [FormerlySerializedAs("_scoring")] [SerializeField] private Score score;
     [SerializeField] private Text _scoringText;
     public void Awake()
     {
-        _scoring.OnScoreValueChangedEvent += OnScoreValueChanged;
+        score.OnScoreValueChangedEvent += OnScoreValueChanged;
     }
 
     private void OnScoreValueChanged(int score)
