@@ -6,30 +6,20 @@ public class Health : MonoBehaviour
 {
     public event Action<HealthData> OnHealthChangedEvent;
     public event Action OnDeathEvent;
-
-    [SerializeField] private int _startHealth;
-    [SerializeField] private Characteristics _playerCharacteristics;
+    
+    private Characteristics _characteristics;
     
     private int _currentHealth;
-    private int _maxHealthValue;
-    private const int _minHealthValue = 0;
-    public int MaxHealthValue { get; private set; }
-    public int MinHealthValue
-    {
-        get => _maxHealthValue;
-        set { return; }
-    }
-    
 
+    public int MaxHealthValue => _characteristics.MaxHealthValue;
+    public int MinHealthValue => _characteristics.MinHealthValue;
+    
     private void Awake()
     {
         OnDeathEvent += Kill;
 
-        MaxHealthValue = PlayerPrefs.GetInt("MaxHealth");
-
-        if (MaxHealthValue <= MinHealthValue)
-            MaxHealthValue = _startHealth;
-
+        _characteristics = new Characteristics();
+        
         _currentHealth = MaxHealthValue;
     }
 

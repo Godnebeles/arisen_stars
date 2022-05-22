@@ -5,4 +5,6 @@ using UnityEngine;
 public class PlayerDataDTO
 {
     public CharacteristicsDTO playerCharacteristicsDTO;
+    public int maxScore;
+    public int money;
 }

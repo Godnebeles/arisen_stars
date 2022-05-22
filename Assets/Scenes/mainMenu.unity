@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 53172066}
   - component: {fileID: 53172065}
   m_Layer: 5
-  m_Name: Buttons
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6417,7 +6417,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -6919,7 +6919,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -14592,54 +14592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c94b6aad15e2847886de35859be3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopBttns:
-  - {fileID: 90644433}
-  - {fileID: 142735204}
-  - {fileID: 1061890727}
-  - {fileID: 1927830122}
-  shopItemsText:
-  - {fileID: 408075234}
-  - {fileID: 1504666949}
-  - {fileID: 238246884}
-  - {fileID: 1265202169}
-  countUpgrades:
-  - {fileID: 994316530}
-  - {fileID: 1623534200}
-  - {fileID: 562490327}
-  - {fileID: 1288596230}
-  shopItems:
-  - cost: 1350
-    levelOfItem: 0
-    costMultiplier: 2
-    name: Health
-    value: 0
-    valueMultiply: 50
-    valueSpeed: 0
-    valueSpeedMyltiply: 0
-  - cost: 18600
-    levelOfItem: 0
-    costMultiplier: 2
-    name: Speed
-    value: 0
-    valueMultiply: 0
-    valueSpeed: 0.05
-    valueSpeedMyltiply: 0
-  - cost: 1350
-    levelOfItem: 0
-    costMultiplier: 2
-    name: Damage
-    value: 0
-    valueMultiply: 25
-    valueSpeed: 0
-    valueSpeedMyltiply: 0
-  - cost: 1813
-    levelOfItem: 0
-    costMultiplier: 2
-    name: Armour
-    value: 2
-    valueMultiply: 0
-    valueSpeed: 0
-    valueSpeedMyltiply: 0
 --- !u!114 &1768948587
 MonoBehaviour:
   m_ObjectHideFlags: 0

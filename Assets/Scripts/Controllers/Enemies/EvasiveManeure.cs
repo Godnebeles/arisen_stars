@@ -1,23 +1,26 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EvasiveManeure : MonoBehaviour
 {
     private Boundary _boundary;
     
-    public Vector2 startWait;
-    private float targetManeuvre;
-    public float dodge;
-    public Vector2 maneuvreTime;
-    public float maneuvreSpeed;
-    public Vector2 maneuvreWait;
-    private float currentSpeed;
+    private Vector2 _startWait;
+    private Vector2 _maneuvreTime;
+    private Vector2 _maneuvreWait;
 
-    public float tilt;
+    private Rigidbody _rigidbody;
+    
+    [SerializeField] private float _targetManeuvre;
+    [SerializeField] private float _dodge;
+    [SerializeField] private float _maneuvreSpeed;
+    [SerializeField] private float _currentSpeed;
+    [SerializeField] private float _tilt;
+    
     private void Start()
     {
-        currentSpeed = GetComponent<Rigidbody>().velocity.z;
+        _currentSpeed = GetComponent<Rigidbody>().velocity.z;
+        _rigidbody = GetComponent<Rigidbody>();
         StartCoroutine(Evade());
     }
 
@@ -31,26 +34,27 @@ public class EvasiveManeure : MonoBehaviour
         yield return new WaitForSeconds
         (
             Random.Range(
-                startWait.x,
-                startWait.y)       
+                _startWait.x,
+                _startWait.y)       
         );
 
         while (true)
         {
-            targetManeuvre = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+            _targetManeuvre = Random.Range(1, _dodge) * (-Mathf.Sign(transform.position.x));
+            
             yield return new WaitForSeconds
             (
                 Random.Range(
-                    maneuvreTime.x,
-                    maneuvreTime.y)
+                    _maneuvreTime.x,
+                    _maneuvreTime.y)
             );
-            targetManeuvre = 0;
+            _targetManeuvre = 0;
 
             yield return new WaitForSeconds
             (
                 Random.Range(
-                    maneuvreWait.x,
-                    maneuvreWait.y)
+                    _maneuvreWait.x,
+                    _maneuvreWait.y)
             );
 
         }
@@ -61,24 +65,25 @@ public class EvasiveManeure : MonoBehaviour
         float newManeuvre = Mathf.MoveTowards
         (
             GetComponent<Rigidbody>().velocity.x,
-            targetManeuvre,
-            maneuvreSpeed * Time.deltaTime
+            _targetManeuvre,
+            _maneuvreSpeed * Time.deltaTime
     
         );
 
-        GetComponent<Rigidbody>().velocity = new Vector3(newManeuvre, 0.0f, currentSpeed);
+        _rigidbody.velocity = new Vector3(newManeuvre, 0.0f, _currentSpeed);
 
-        GetComponent<Rigidbody>().position = new Vector3
+        _rigidbody.position = new Vector3
         (
-            Mathf.Clamp(GetComponent<Rigidbody>().position.x, _boundary.xMin, _boundary.xMax),
+            Mathf.Clamp(_rigidbody.position.x, _boundary.xMin, _boundary.xMax),
             0.0f,
-            Mathf.Clamp(GetComponent<Rigidbody>().position.z, _boundary.zMin, _boundary.zMax)
+            Mathf.Clamp(_rigidbody.position.z, _boundary.zMin * 2, _boundary.zMax)
         );
-        GetComponent<Rigidbody>().rotation = Quaternion.Euler
+        
+        _rigidbody.rotation = Quaternion.Euler
            (
                0f,
                0f,
-               GetComponent<Rigidbody>().velocity.x * -tilt
+               _rigidbody.velocity.x * (-_tilt)
            );
     }
 

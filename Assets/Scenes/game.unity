@@ -613,6 +613,7 @@ Transform:
   - {fileID: 1186952710}
   - {fileID: 1835804772}
   - {fileID: 843973373}
+  - {fileID: 1394963836}
   m_Father: {fileID: 1411736254}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1177,6 +1178,7 @@ Transform:
   m_Children:
   - {fileID: 311546123}
   - {fileID: 1384920586}
+  - {fileID: 870114764}
   m_Father: {fileID: 926110953}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11542,6 +11544,36 @@ MonoBehaviour:
   _startWait: 2
   _wavesWait: 5
   _boundary: {fileID: 1186952709}
+--- !u!1 &870114762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870114764}
+  m_Layer: 6
+  m_Name: Characteristics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &870114764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870114762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 569882422}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926110952
 GameObject:
   m_ObjectHideFlags: 0
@@ -12385,15 +12417,15 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 79525858}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 200
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12502,6 +12534,51 @@ Transform:
   m_Father: {fileID: 569882422}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1394963835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394963836}
+  - component: {fileID: 1394963837}
+  m_Layer: 0
+  m_Name: SaveStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1394963836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394963835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 363765928}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1394963837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394963835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd35964ae19fd742bd96ac349982a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: {fileID: 1835804773}
+  _money: {fileID: 0}
 --- !u!1 &1411736253
 GameObject:
   m_ObjectHideFlags: 0
@@ -12545,7 +12622,7 @@ GameObject:
   - component: {fileID: 1441002937}
   - component: {fileID: 1441002938}
   m_Layer: 0
-  m_Name: ViewStorage
+  m_Name: ViewPauseAndMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13367,7 +13444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2af14136f6a5942af01d7543a8b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startHealth: 300
 --- !u!114 &1740704858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13538,9 +13614,8 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 100002, guid: 38ae31d1b916403459c4d4f82605c856, type: 3}
   _bulletSpawnPosition: {fileID: 1384920586}
   _audio: {fileID: 1740704863}
+  _scoreCalculator: {fileID: 363765931}
   _attackCooldown: 0.5
-  scoreCalculator: {fileID: 363765931}
-  _damage: 100
   _nextFireTime: 0
   _layer: 0
 --- !u!1 &1740780484

@@ -6,14 +6,21 @@ public class SimplePlayerAttack : MonoBehaviour, IPauseHandler
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private ScoreCalculator _scoreCalculator;
+    private Characteristics _characteristics;
+
     [SerializeField] private float _attackCooldown = 0.1f;
-    [FormerlySerializedAs("_scoringCalculator")] [SerializeField] private ScoreCalculator scoreCalculator;
-    [SerializeField] private int _damage;
     [SerializeField] private float _nextFireTime = 0f;
 
     [SerializeField] private int _layer;
     private bool _isPaused;
 
+
+    private void Start()
+    {
+        _characteristics = new Characteristics();
+    }
+    
     private void Update()
     {
         if (_isPaused)
@@ -27,10 +34,10 @@ public class SimplePlayerAttack : MonoBehaviour, IPauseHandler
             {
                 _nextFireTime = Time.time + _attackCooldown;
                 Damager damager = Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation)
-                    .GetComponent<Damager>();
-                damager.SetDamage(_damage);
+                                             .GetComponent<Damager>();
+                damager.SetDamage(_characteristics.Damage);
                 damager.OnDeathAction(OnEnemyKilling);
-                damager.gameObject.layer = _layer;
+                //damager.gameObject.layer = _layer;
                 GetComponent<AudioSource>().Play();
             }
         }
@@ -38,7 +45,7 @@ public class SimplePlayerAttack : MonoBehaviour, IPauseHandler
 
     private void OnEnemyKilling()
     {
-        scoreCalculator.AddScore();
+        _scoreCalculator.AddScore();
     }
 
     public void SetPaused(bool isPaused)

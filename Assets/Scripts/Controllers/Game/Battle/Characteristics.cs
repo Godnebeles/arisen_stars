@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Characteristics : MonoBehaviour
+public class Characteristics
 {
-    public int MaxHealth { get; private set; }
-    public int Damage{ get; private set; }
+    public int MaxHealthValue { get; private set; } = 200;
+    public readonly int MinHealthValue = 0;
+    public int Damage { get; private set; } = 50;
     public int Armor{ get; private set; }
     public float Speed{ get; private set; }
     
@@ -16,7 +15,7 @@ public class Characteristics : MonoBehaviour
         if (_isInitialized)
             return;
 
-        MaxHealth = characteristicsDTO.maxHealth;
+        MaxHealthValue = characteristicsDTO.maxHealth;
         Damage = characteristicsDTO.damage;
         Armor = characteristicsDTO.armor;
         Speed = characteristicsDTO.speed;

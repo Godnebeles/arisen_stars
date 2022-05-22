@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using UnityEngine.Advertisements;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour
 {
@@ -14,7 +12,9 @@ public class GameController : MonoBehaviour
     [Header("Sound")]
     public Slider volumeSlider;
     private AudioSource audio;
+    // 
     
+
     private void Start ()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
